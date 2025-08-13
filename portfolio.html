@@ -89,41 +89,73 @@
 
     <main id="main-content">
         <!-- Portfolio Page Content -->
-        <section id="portfolio" class="py-20 md:py-32 px-6 bg-brand-card">
+        <section id="portfolio" class="py-20 md:py-32 px-6">
             <div class="container mx-auto max-w-6xl pt-16">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Portfolio</h2>
-                    <p class="mt-4 text-lg text-brand-subtle reveal reveal-delay-1">A showcase of our current and upcoming work.</p>
+                    <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Our Work</h2>
+                    <p class="mt-4 text-lg text-brand-subtle reveal reveal-delay-1">A showcase of our current and upcoming projects.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Drift Card -->
-                    <div class="bg-brand-bg rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 reveal">
-                        <img src="https://placehold.co/600x400/F9F6F2/403d39?text=Drift+Journal" alt="Drift App" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold">Drift - Stoic Journal</h3>
-                            <p class="text-brand-subtle text-sm mt-1">Available Now</p>
-                            <p class="text-brand-text/80 mt-4 mb-4">An elegant and private journaling app to help you build resilience and find tranquility through Stoic wisdom.</p>
+                <!-- Featured Project: Drift -->
+                <div class="mb-24">
+                    <h3 class="text-3xl font-playfair font-bold mb-8 reveal">Available Now</h3>
+                    <div class="bg-brand-card rounded-lg shadow-lg dark:shadow-2xl overflow-hidden grid md:grid-cols-2 items-center group reveal">
+                        <div class="p-8 md:p-12">
+                            <h4 class="text-3xl font-bold mb-4">Drift - Stoic Journal</h4>
+                            <p class="text-brand-text/80 mt-4 mb-6">An elegant and private journaling app to help you build resilience and find tranquility through Stoic wisdom. Designed to be a quiet space for your thoughts.</p>
+                            <ul class="space-y-2 mb-8 text-brand-text/80">
+                                <li class="flex items-center"><span class="text-brand-accent mr-3">✦</span>Actionable Reminders</li>
+                                <li class="flex items-center"><span class="text-brand-accent mr-3">✦</span>Complete Privacy</li>
+                                <li class="flex items-center"><span class="text-brand-accent mr-3">✦</span>Minimalist Design</li>
+                            </ul>
                             <a href="drift.html" class="font-semibold text-brand-accent hover:underline">View Details &rarr;</a>
                         </div>
+                        <div class="overflow-hidden h-64 md:h-full bg-brand-bg/50 dark:bg-brand-bg/10 flex items-center justify-center">
+                            <img src="drift.png" alt="Drift App Logo" class="w-auto h-auto max-w-[70%] max-h-[70%] object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                        </div>
                     </div>
-                    <!-- Teehee Card -->
-                    <div class="bg-brand-bg rounded-lg p-6 text-center border-2 border-dashed border-brand-subtle/30 reveal reveal-delay-1">
-                         <h3 class="text-2xl font-bold">Teehee</h3>
-                         <p class="text-brand-subtle text-sm mt-1">Later Stages of Dev</p>
-                         <p class="text-brand-text/80 mt-4">A playful approach to creative writing and idea generation. Coming soon.</p>
-                    </div>
-                    <!-- Project Echo Card -->
-                    <div class="bg-brand-bg rounded-lg p-6 text-center border-2 border-dashed border-brand-subtle/30 reveal reveal-delay-2">
-                         <h3 class="text-2xl font-bold">Project Echo</h3>
-                         <p class="text-brand-subtle text-sm mt-1">Early Stages of Dev</p>
-                         <p class="text-brand-text/80 mt-4">A new way to manage your focus and digital habits. Stay tuned.</p>
-                    </div>
-                    <!-- Project Bloou Card -->
-                    <div class="bg-brand-bg rounded-lg p-6 text-center border-2 border-dashed border-brand-subtle/30 reveal reveal-delay-3">
-                         <h3 class="text-2xl font-bold">Project Bloou</h3>
-                         <p class="text-brand-subtle text-sm mt-1">Early Stages of Dev</p>
-                         <p class="text-brand-text/80 mt-4">Exploring the intersection of mindfulness and ambient soundscapes.</p>
+                </div>
+
+                <!-- In the Works -->
+                <div>
+                    <h3 class="text-3xl font-playfair font-bold mb-8 reveal">In the Works</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Teehee Card -->
+                        <div class="bg-brand-card rounded-lg p-8 shadow-lg dark:shadow-2xl reveal reveal-delay-1">
+                            <h4 class="text-2xl font-bold">Teehee</h4>
+                            <p class="text-brand-text/80 mt-2">A playful approach to creative writing and idea generation.</p>
+                            <div class="mt-6">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-subtle">Status</span>
+                                <div class="w-full bg-brand-border rounded-full h-2.5 mt-2">
+                                  <div class="bg-green-500 h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-sm text-brand-subtle mt-1">Later Stages of Dev</p>
+                            </div>
+                        </div>
+                        <!-- Project Echo Card -->
+                        <div class="bg-brand-card rounded-lg p-8 shadow-lg dark:shadow-2xl reveal reveal-delay-2">
+                            <h4 class="text-2xl font-bold">Project Echo</h4>
+                            <p class="text-brand-text/80 mt-2">A new way to manage your focus and digital habits.</p>
+                             <div class="mt-6">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-subtle">Status</span>
+                                <div class="w-full bg-brand-border rounded-full h-2.5 mt-2">
+                                  <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 25%"></div>
+                                </div>
+                                <p class="text-sm text-brand-subtle mt-1">Early Stages of Dev</p>
+                            </div>
+                        </div>
+                        <!-- Project Bloou Card -->
+                        <div class="bg-brand-card rounded-lg p-8 shadow-lg dark:shadow-2xl reveal reveal-delay-3">
+                            <h4 class="text-2xl font-bold">Project Bloou</h4>
+                            <p class="text-brand-text/80 mt-2">Exploring the intersection of mindfulness and ambient soundscapes.</p>
+                             <div class="mt-6">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-subtle">Status</span>
+                                <div class="w-full bg-brand-border rounded-full h-2.5 mt-2">
+                                  <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 15%"></div>
+                                </div>
+                                <p class="text-sm text-brand-subtle mt-1">Early Stages of Dev</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,7 +163,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-20 md:py-32 px-6 bg-brand-bg text-center">
+    <footer class="py-20 md:py-32 px-6 bg-brand-card text-center">
         <div class="container mx-auto max-w-2xl">
             <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Let's Talk</h2>
             <p class="mt-6 text-lg md:text-xl text-brand-subtle reveal reveal-delay-1">Have feedback, questions, or want to collaborate? We read every email.</p>
@@ -145,7 +177,7 @@
             </div>
         </div>
     </footer>
-    <div class="py-8 px-6 text-center text-brand-subtle text-sm bg-brand-bg border-t border-brand-border">
+    <div class="py-8 px-6 text-center text-brand-subtle text-sm bg-brand-card border-t border-brand-border">
         <p>&copy; 2024 Afterlight Studio. All Rights Reserved.</p>
     </div>
 
