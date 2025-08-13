@@ -163,6 +163,24 @@
                     </div>
                  </div>
             </div>
+            <!-- Important Updates Section -->
+            <div class="py-20 md:py-32 px-6">
+                <div class="container mx-auto max-w-4xl">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Important Updates & Notes</h2>
+                    </div>
+                    <div class="space-y-6 text-brand-text/80 text-lg reveal reveal-delay-1 max-w-2xl mx-auto">
+                        <div class="flex items-start space-x-4">
+                            <span class="text-brand-accent mt-1">✦</span>
+                            <p><strong>8th August 2025</strong> - Drift 2 (version 1.7.9) was released world wide with a new aesthetic and design, with multiple new features.</p>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-brand-accent mt-1">✦</span>
+                            <p>Version 1.9.0 (temporarily titled Drift 2.1) is being sent to review and will be released by September, adding multiple new features and design fixes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -189,7 +207,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             // --- Active Nav Link Logic ---
             const navLinks = document.querySelectorAll('.nav-link');
-            const currentPage = window.location.pathname.split('/').pop();
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === currentPage) {
                     link.classList.add('active');
