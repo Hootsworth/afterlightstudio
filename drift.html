@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drift — Afterlight Studio</title>
+    <meta name="description" content="Discover Drift, a private and mindful journaling app from Afterlight Studio.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles & Tailwind Config -->
+    <style>
+        :root {
+            --bg-color: #F9F6F2;
+            --text-color: #403d39;
+            --heading-color: #252422;
+            --accent-color: #8367c7;
+            --subtle-color: #a3a3a3;
+            --card-bg-color: #FFFFFF;
+            --border-color: rgba(0,0,0,0.08);
+        }
+        html.dark {
+            --bg-color: #1c1c1e;
+            --text-color: #d4d4d8;
+            --heading-color: #ffffff;
+            --accent-color: #a78bfa;
+            --subtle-color: #71717a;
+            --card-bg-color: #2a2a2c;
+            --border-color: rgba(255,255,255,0.1);
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.5s, color 0.5s; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: var(--heading-color); }
+        .nav-link.active { color: var(--accent-color); font-weight: 500; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-delay-3 { transition-delay: 0.45s; }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'], 'playfair': ['Playfair Display', 'serif'], },
+                    colors: { 'brand-bg': 'var(--bg-color)', 'brand-text': 'var(--text-color)', 'brand-heading': 'var(--heading-color)', 'brand-accent': 'var(--accent-color)', 'brand-subtle': 'var(--subtle-color)', 'brand-card': 'var(--card-bg-color)', 'brand-border': 'var(--border-color)', }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-bg text-brand-text antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 p-6 transition-all duration-300">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-playfair font-bold text-brand-heading">Afterlight Studio</a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Home</a>
+                <a href="about.html" class="nav-link hover:text-brand-accent transition-colors duration-300">About</a>
+                <a href="portfolio.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Portfolio</a>
+                <a href="drift.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Drift</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <svg class="w-6 h-6 text-brand-heading" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-brand-card/80 backdrop-blur-lg rounded-lg p-4">
+            <a href="index.html" class="block py-2 text-brand-text">Home</a>
+            <a href="about.html" class="block py-2 text-brand-text">About</a>
+            <a href="portfolio.html" class="block py-2 text-brand-text">Portfolio</a>
+            <a href="drift.html" class="block py-2 text-brand-text">Drift</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Drift Landing Page Content -->
+        <section id="drift" class="py-20 md:py-32 px-6">
+             <div class="container mx-auto max-w-6xl pt-16">
+                <div class="text-center mb-16">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-brand-accent reveal">Our First App</h3>
+                    <h2 class="mt-4 text-4xl md:text-6xl font-playfair font-bold reveal reveal-delay-1">Drift</h2>
+                    <p class="mt-6 text-lg md:text-xl text-brand-subtle max-w-2xl mx-auto reveal reveal-delay-2">An offline-first journaling experience for emotional clarity.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                    <div class="space-y-8 reveal">
+                        <h3 class="text-2xl font-bold">A Private Sanctuary for Your Thoughts</h3>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-brand-accent mt-1">✦</span>
+                            <p><strong class="font-semibold text-brand-heading">Actionable Reminders (New!).</strong> Write a simple diary entry in your own words and let us set the perfect, timely reminders for you to reflect and act.</p>
+                        </div>
+                        <div class="flex items-start space-x-4 reveal-delay-1">
+                            <span class="text-brand-accent mt-1">✦</span>
+                            <p><strong class="font-semibold text-brand-heading">Completely Private.</strong> Your entries are encrypted and stored only on your device. We can't see them, and we never will. No accounts, no cloud.</p>
+                        </div>
+                         <div class="flex items-start space-x-4 reveal-delay-2">
+                            <span class="text-brand-accent mt-1">✦</span>
+                            <p><strong class="font-semibold text-brand-heading">Minimalist Design.</strong> A clean, beautiful, and distraction-free interface to help you focus on what matters: your thoughts.</p>
+                        </div>
+                    </div>
+                    <div class="reveal reveal-delay-1">
+                        <img src="https://placehold.co/800x1200/F9F6F2/403d39?text=Drift+App+Mockup" alt="Drift App Screenshot" class="rounded-2xl shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/800x1200/1C1C1E/EAEAEA?text=Drift+App+Mockup';">
+                    </div>
+                </div>
+                
+                <!-- Screenshot Gallery -->
+                <div class="mt-20 md:mt-32">
+                    <h3 class="text-3xl font-playfair font-bold text-center mb-12 reveal">Glimpses of Drift</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                        <div class="reveal"><img src="https://placehold.co/400x600/F9F6F2/403d39?text=Screenshot+1" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" alt="Drift Screenshot 1"></div>
+                        <div class="reveal reveal-delay-1"><img src="https://placehold.co/400x600/F9F6F2/403d39?text=Screenshot+2" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" alt="Drift Screenshot 2"></div>
+                        <div class="reveal reveal-delay-2"><img src="https://placehold.co/400x600/F9F6F2/403d39?text=Screenshot+3" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" alt="Drift Screenshot 3"></div>
+                        <div class="reveal reveal-delay-3"><img src="https://placehold.co/400x600/F9F6F2/403d39?text=Screenshot+4" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" alt="Drift Screenshot 4"></div>
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div class="mt-20 md:mt-32 bg-brand-card py-16 px-6 rounded-lg">
+                    <div class="container mx-auto max-w-4xl text-center">
+                        <h3 class="text-3xl font-playfair font-bold mb-4 reveal">Unlock Your Potential</h3>
+                        <p class="text-lg text-brand-subtle mb-12 reveal reveal-delay-1">Simple, one-time purchases. No subscriptions.</p>
+                        <div class="flex flex-col md:flex-row justify-center gap-8">
+                            <!-- Pro Lite Card -->
+                            <div class="flex-1 border border-brand-border p-8 rounded-lg reveal reveal-delay-2">
+                                <h4 class="text-2xl font-bold">Pro Lite</h4>
+                                <p class="text-4xl font-playfair font-bold my-4">$0.6 <span class="text-lg text-brand-subtle">USD</span></p>
+                                <p class="text-brand-text/80 mb-6">Get started with essential pro features. Pay the remainder later for the full Pro experience.</p>
+                                <ul class="text-left space-y-2 mb-8">
+                                    <li>✓ Actionable Reminders</li>
+                                    <li>✓ Basic Export Options</li>
+                                    <li>✓ 5 Custom Themes</li>
+                                </ul>
+                                <a href="https://play.google.com/store/apps/details?id=com.papertrail.drift" target="_blank" class="w-full block bg-brand-bg text-brand-heading font-semibold py-3 px-8 rounded-full hover:bg-brand-border transition-colors duration-300">Choose Lite</a>
+                            </div>
+                            <!-- Pro Card -->
+                            <div class="flex-1 bg-brand-accent text-white p-8 rounded-lg shadow-lg reveal reveal-delay-3">
+                                <h4 class="text-2xl font-bold text-white">Pro</h4>
+                                <p class="text-4xl font-playfair font-bold my-4">$1.7 <span class="text-lg opacity-80">USD</span></p>
+                                <p class="opacity-90 mb-6">The complete Drift experience. Unlock everything with a single purchase.</p>
+                                <ul class="text-left space-y-2 mb-8">
+                                    <li>✓ Everything in Pro Lite</li>
+                                    <li>✓ Advanced Export & Backup</li>
+                                    <li>✓ All Custom Themes</li>
+                                    <li>✓ Priority Support</li>
+                                </ul>
+                                <a href="https://play.google.com/store/apps/details?id=com.papertrail.drift" target="_blank" class="w-full block bg-white text-brand-accent font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">Go Pro</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 md:py-32 px-6 bg-brand-card text-center">
+        <div class="container mx-auto max-w-2xl">
+            <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Let's Talk</h2>
+            <p class="mt-6 text-lg md:text-xl text-brand-subtle reveal reveal-delay-1">Have feedback, questions, or want to collaborate? We read every email.</p>
+            <div class="mt-10 reveal reveal-delay-2">
+                <a href="mailto:papertrail.apps@gmail.com" class="inline-block bg-brand-accent text-white dark:text-gray-900 font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">papertrail.apps@gmail.com</a>
+            </div>
+            <div class="flex justify-center space-x-6 mt-12 text-brand-subtle">
+                <a href="https://www.instagram.com/afterlight.apps/" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Instagram</a>
+                <span>&bull;</span>
+                <a href="https://www.threads.com/afterlight.apps/" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Threads</a>
+            </div>
+        </div>
+    </footer>
+    <div class="py-8 px-6 text-center text-brand-subtle text-sm bg-brand-card border-t border-brand-border">
+        <p>&copy; 2024 Afterlight Studio. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Active Nav Link Logic ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const currentPage = 'drift.html'; // Set current page for active link
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+            // --- Scroll Animation Logic ---
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); } });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+
+            // --- Theme Toggle Logic ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+            const applyTheme = (theme) => {
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    lightIcon.classList.remove('hidden');
+                    darkIcon.classList.add('hidden');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    darkIcon.classList.remove('hidden');
+                    lightIcon.classList.add('hidden');
+                }
+            };
+            const currentTheme = localStorage.getItem('color-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            applyTheme(currentTheme);
+            themeToggleBtn.addEventListener('click', () => {
+                const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+                localStorage.setItem('color-theme', newTheme);
+                applyTheme(newTheme);
+            });
+
+            // --- Header background on scroll ---
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:shadow-md');
+                } else {
+                    header.classList.remove('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:shadow-md');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
