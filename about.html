@@ -40,6 +40,8 @@
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
         .reveal.is-visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.25s; }
+        .reveal-delay-3 { transition-delay: 0.35s; }
     </style>
     
     <script>
@@ -91,28 +93,68 @@
             <div class="container mx-auto max-w-4xl pt-16">
                  <div class="text-center mb-16 md:mb-24">
                     <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Our Philosophy</h2>
-                    <p class="mt-4 text-lg text-brand-subtle reveal reveal-delay-1">Why we build what we build.</p>
+                    <p class="mt-4 text-lg text-brand-subtle reveal reveal-delay-1">Technology should serve humanity, not the other way around.</p>
                 </div>
 
                 <div class="space-y-16">
                     <div class="grid md:grid-cols-3 gap-8 items-start">
                         <h3 class="text-2xl font-playfair font-bold md:text-right reveal">Our Ethos</h3>
-                        <p class="md:col-span-2 text-lg leading-relaxed text-brand-text/80 reveal reveal-delay-1">Afterlight Studio was founded on a simple belief: technology should serve humanity, not the other way around. In a world of endless notifications and algorithmic feeds, we design software that feels like a quiet room—a space for focus, reflection, and genuine creativity. Our core principles are <strong class="text-brand-heading">Privacy First</strong>, <strong class="text-brand-heading">Uncompromising Security</strong>, and fostering <strong class="text-brand-heading">Mental Wellbeing</strong>.</p>
+                        <p class="md:col-span-2 text-lg leading-relaxed text-brand-text/80 reveal reveal-delay-1">Afterlight Studio was founded on a simple belief: in a world of endless notifications and algorithmic feeds, we need software that feels like a quiet room—a space for focus, reflection, and genuine creativity. We're not just building apps; we're crafting companions for your mind.</p>
                     </div>
                      <div class="grid md:grid-cols-3 gap-8 items-start">
                         <h3 class="text-2xl font-playfair font-bold md:text-right reveal">Our Motto</h3>
-                        <p class="md:col-span-2 text-lg leading-relaxed text-brand-text/80 reveal reveal-delay-1">"Illuminate Your Path." We believe the right tools can bring clarity and purpose, helping you navigate your personal journey with confidence and peace. We're not just building apps; we're crafting companions for your mind.</p>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-8 items-start">
-                        <h3 class="text-2xl font-playfair font-bold md:text-right reveal">The Founder</h3>
-                        <div class="md:col-span-2 text-lg leading-relaxed text-brand-text/80 reveal reveal-delay-1">
-                            <p>I am a second-year B.Tech Honours student in Computer Science, majoring in AI & Machine Learning. Afterlight is my effort to merge technical skills with a deep interest in philosophy and human-centered design to build technology that makes a positive, tangible difference in people's lives.</p>
-                            <p class="mt-4 text-sm text-brand-subtle">You can follow the journey on <a href="https://www.instagram.com/afterlight.apps/" target="_blank" class="font-semibold text-brand-accent hover:underline">Instagram</a> or <a href="https://www.threads.com/afterlight.apps/" target="_blank" class="font-semibold text-brand-accent hover:underline">Threads</a>.</p>
-                        </div>
+                        <p class="md:col-span-2 text-2xl font-playfair italic leading-relaxed text-brand-heading reveal reveal-delay-1">"Illuminate Your Path."</p>
+                        <p class="md:col-start-2 md:col-span-2 text-lg leading-relaxed text-brand-text/80 reveal reveal-delay-1 -mt-12">We believe the right tools can bring clarity and purpose, helping you navigate your personal journey with confidence and peace.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Core Values Section -->
+        <section class="py-20 md:py-32 px-6 bg-brand-card">
+             <div class="container mx-auto max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Our Core Values</h2>
+                    <p class="mt-4 text-lg text-brand-subtle reveal reveal-delay-1">The principles that guide every decision we make.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center reveal">
+                        <h3 class="text-2xl font-bold mb-3">Privacy First</h3>
+                        <p class="text-brand-text/80">Your data is yours, period. We build our apps to be private by default. That means no trackers, no ads, and no data mining. We believe privacy is a fundamental human right, not a feature.</p>
+                    </div>
+                    <div class="text-center reveal reveal-delay-1">
+                        <h3 class="text-2xl font-bold mb-3">Thoughtful Design</h3>
+                        <p class="text-brand-text/80">We believe software should be beautiful, intuitive, and calm. We obsess over details to create distraction-free experiences that respect your time and attention, helping you find your flow.</p>
+                    </div>
+                    <div class="text-center reveal reveal-delay-2">
+                        <h3 class="text-2xl font-bold mb-3">Wellbeing Focused</h3>
+                        <p class="text-brand-text/80">Our goal is to create tools that genuinely improve your life. We build technology that fosters mental clarity, encourages healthy habits, and supports your overall peace of mind.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Founder Section -->
+        <section class="py-20 md:py-32 px-6">
+            <div class="container mx-auto max-w-4xl">
+                <div class="bg-brand-card rounded-lg p-8 md:p-12 grid md:grid-cols-3 gap-8 md:gap-12 items-center shadow-lg dark:shadow-2xl reveal">
+                    <div class="md:col-span-1">
+                        <img src="https://placehold.co/400x400/F9F6F2/403d39?text=Founder" alt="Founder of Afterlight Studio" class="rounded-full aspect-square object-cover w-full max-w-[200px] mx-auto md:max-w-full">
+                    </div>
+                    <div class="md:col-span-2">
+                        <h3 class="text-3xl font-playfair font-bold">Meet the Founder</h3>
+                        <p class="mt-4 text-lg leading-relaxed text-brand-text/80">
+                            I'm a second-year B.Tech Honours student in Computer Science, with a major in AI & Machine Learning. Afterlight Studio is my effort to merge a passion for clean code with a deep interest in philosophy and human-centered design.
+                        </p>
+                        <p class="mt-4 text-lg leading-relaxed text-brand-text/80">
+                            My goal is to build technology that makes a positive, tangible difference in people's lives—tools that are quiet, respectful, and empowering.
+                        </p>
+                        <p class="mt-6 text-sm text-brand-subtle">You can follow the journey on <a href="https://www.instagram.com/afterlight.apps/" target="_blank" class="font-semibold text-brand-accent hover:underline">Instagram</a> or <a href="https://www.threads.com/afterlight.apps/" target="_blank" class="font-semibold text-brand-accent hover:underline">Threads</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
