@@ -42,6 +42,13 @@
         .reveal-delay-1 { transition-delay: 0.15s; }
         .reveal-delay-2 { transition-delay: 0.25s; }
         .reveal-delay-3 { transition-delay: 0.35s; }
+        
+        /* Timeline Styles */
+        .timeline-item { position: relative; padding-left: 2.5rem; padding-bottom: 2rem; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-dot { content: ''; position: absolute; left: 0; top: 0.25rem; width: 1rem; height: 1rem; background-color: var(--accent-color); border-radius: 9999px; }
+        .timeline-line { content: ''; position: absolute; left: 0.4375rem; top: 0.25rem; bottom: -0.25rem; width: 2px; background-color: var(--border-color); }
+
     </style>
     
     <script>
@@ -133,9 +140,41 @@
                 </div>
              </div>
         </section>
+        
+        <!-- Timeline Section -->
+        <section class="py-20 md:py-32 px-6">
+            <div class="container mx-auto max-w-2xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">The Journey So Far</h2>
+                </div>
+                <div class="relative reveal">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-xl font-bold">Start of June</h4>
+                        <p class="text-brand-text/80 mt-1">The first lines of code for Drift are written, born from a desire for a simple, private journaling space.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-xl font-bold">End of July</h4>
+                        <p class="text-brand-text/80 mt-1">After weeks of development and refinement, Drift is published on the Google Play Store for the public to download.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-xl font-bold">8th August</h4>
+                        <p class="text-brand-text/80 mt-1">The Drift 2.0 update is pushed, introducing a refreshed design and new features based on early user feedback.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-xl font-bold">End of September</h4>
+                        <p class="text-brand-text/80 mt-1">Our next app, Teehee, is scheduled to begin closed testing with a select group of users.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Founder Section -->
-        <section class="py-20 md:py-32 px-6">
+        <section class="pb-20 md:pb-32 px-6">
             <div class="container mx-auto max-w-4xl">
                 <div class="bg-brand-card rounded-lg p-8 md:p-12 grid md:grid-cols-3 gap-8 md:gap-12 items-center shadow-lg dark:shadow-2xl reveal">
                     <div class="md:col-span-1">
