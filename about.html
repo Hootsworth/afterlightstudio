@@ -6,37 +6,34 @@
     <title>About — Afterlight Studio</title>
     <meta name="description" content="Learn about the philosophy and founder behind Afterlight Studio.">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles & Tailwind Config -->
     <style>
         :root {
-            --bg-color: #F9F6F2;
-            --text-color: #403d39;
-            --heading-color: #252422;
-            --accent-color: #8367c7;
-            --subtle-color: #a3a3a3;
-            --card-bg-color: #FFFFFF;
-            --border-color: rgba(0,0,0,0.08);
+            --bg-color: #ffffff;
+            --text-color: #1d1d1f;
+            --heading-color: #000000;
+            --accent-color: #007aff;
+            --subtle-color: #6e6e73;
+            --card-bg-color: #f5f5f7;
+            --border-color: #d2d2d7;
         }
         html.dark {
-            --bg-color: #1c1c1e;
-            --text-color: #d4d4d8;
+            --bg-color: #000000;
+            --text-color: #f5f5f7;
             --heading-color: #ffffff;
-            --accent-color: #a78bfa;
-            --subtle-color: #71717a;
-            --card-bg-color: #2a2a2c;
-            --border-color: rgba(255,255,255,0.1);
+            --accent-color: #0a84ff;
+            --subtle-color: #86868b;
+            --card-bg-color: #1d1d1f;
+            --border-color: #3a3a3c;
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.5s, color 0.5s; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: var(--heading-color); }
-        .nav-link.active { color: var(--accent-color); font-weight: 500; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.5s, color 0.5s; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; color: var(--heading-color); }
+        .nav-link.active { color: var(--accent-color); font-weight: 600; }
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
         .reveal.is-visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.15s; }
@@ -46,7 +43,7 @@
         /* Timeline Styles */
         .timeline-item { position: relative; padding-left: 2.5rem; padding-bottom: 2rem; }
         .timeline-item:last-child { padding-bottom: 0; }
-        .timeline-dot { content: ''; position: absolute; left: 0; top: 0.25rem; width: 1rem; height: 1rem; background-color: var(--accent-color); border-radius: 9999px; }
+        .timeline-dot { content: ''; position: absolute; left: 0; top: 0.25rem; width: 1rem; height: 1rem; background-color: var(--accent-color); border-radius: 9999px; border: 2px solid var(--bg-color); }
         .timeline-line { content: ''; position: absolute; left: 0.4375rem; top: 0.25rem; bottom: -0.25rem; width: 2px; background-color: var(--border-color); }
 
     </style>
@@ -56,7 +53,7 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { 'inter': ['Inter', 'sans-serif'], 'playfair': ['Playfair Display', 'serif'], },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'], },
                     colors: { 'brand-bg': 'var(--bg-color)', 'brand-text': 'var(--text-color)', 'brand-heading': 'var(--heading-color)', 'brand-accent': 'var(--accent-color)', 'brand-subtle': 'var(--subtle-color)', 'brand-card': 'var(--card-bg-color)', 'brand-border': 'var(--border-color)', }
                 }
             }
@@ -65,15 +62,15 @@
 </head>
 <body class="bg-brand-bg text-brand-text antialiased">
 
-    <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 p-6 transition-all duration-300">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xl font-playfair font-bold text-brand-heading">Afterlight Studio</a>
+            <a href="index.html" class="text-xl font-bold text-brand-heading">Afterlight Studio</a>
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="index.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Home</a>
                 <a href="about.html" class="nav-link hover:text-brand-accent transition-colors duration-300">About</a>
                 <a href="portfolio.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Portfolio</a>
                 <a href="drift.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Drift</a>
+                <a href="teehee.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Teehee</a>
             </div>
             <div class="flex items-center space-x-4">
                  <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
@@ -85,110 +82,105 @@
                 </button>
             </div>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-brand-card/80 backdrop-blur-lg rounded-lg p-4">
+        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-brand-card/80 dark:bg-brand-card backdrop-blur-lg rounded-lg p-4">
             <a href="index.html" class="block py-2 text-brand-text">Home</a>
             <a href="about.html" class="block py-2 text-brand-text">About</a>
             <a href="portfolio.html" class="block py-2 text-brand-text">Portfolio</a>
             <a href="drift.html" class="block py-2 text-brand-text">Drift</a>
+            <a href="teehee.html" class="block py-2 text-brand-text">Teehee</a>
         </div>
     </header>
 
     <main id="main-content">
-        <!-- About Us Page Content -->
         <section id="about" class="py-20 md:py-32 px-6">
             <div class="container mx-auto max-w-4xl pt-16">
                  <div class="text-center mb-16 md:mb-24">
-                    <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Our Philosophy</h2>
-                    <p class="mt-4 text-lg text-brand-subtle reveal reveal-delay-1">Technology should serve humanity, not the other way around.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight reveal">Our Mission</h2>
+                    <p class="mt-4 text-lg text-brand-subtle reveal reveal-delay-1">To create technology that is simple, intuitive, and respects your attention.</p>
                 </div>
 
                 <div class="space-y-16">
                     <div class="grid md:grid-cols-3 gap-8 items-start">
-                        <h3 class="text-2xl font-playfair font-bold md:text-right reveal">Our Ethos</h3>
-                        <p class="md:col-span-2 text-lg leading-relaxed text-brand-text/80 reveal reveal-delay-1">Afterlight Studio was founded on a simple belief: in a world of endless notifications and algorithmic feeds, we need software that feels like a quiet room—a space for focus, reflection, and genuine creativity. We're not just building apps; we're crafting companions for your mind.</p>
-                    </div>
-                     <div class="grid md:grid-cols-3 gap-8 items-start">
-                        <h3 class="text-2xl font-playfair font-bold md:text-right reveal">Our Motto</h3>
-                        <p class="md:col-span-2 text-2xl font-playfair italic leading-relaxed text-brand-heading reveal reveal-delay-1">"Illuminate Your Path."</p>
-                        <p class="md:col-start-2 md:col-span-2 text-lg leading-relaxed text-brand-text/80 reveal reveal-delay-1 -mt-12">We believe the right tools can bring clarity and purpose, helping you navigate your personal journey with confidence and peace.</p>
+                        <h3 class="text-2xl font-semibold md:text-right reveal">User Experience is Key</h3>
+                        <p class="md:col-span-2 text-lg leading-relaxed text-brand-text/80 reveal reveal-delay-1">Afterlight Studio was founded on a simple belief: in a world of endless notifications, we need software that feels like a quiet room. We believe software should be an extension of your mind, not a distraction. Our design process starts and ends with the user. Everything else is secondary.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Core Values Section -->
         <section class="py-20 md:py-32 px-6 bg-brand-card">
              <div class="container mx-auto max-w-5xl">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Our Core Values</h2>
-                    <p class="mt-4 text-lg text-brand-subtle reveal reveal-delay-1">The principles that guide every decision we make.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight reveal">Our Core Values</h2>
+                    <p class="mt-4 text-lg text-brand-subtle reveal reveal-delay-1">The principles that guide every decision.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-12">
                     <div class="text-center reveal">
-                        <h3 class="text-2xl font-bold mb-3">Privacy First</h3>
-                        <p class="text-brand-text/80">Your data is yours, period. We build our apps to be private by default. That means no trackers, no ads, and no data mining. We believe privacy is a fundamental human right, not a feature.</p>
+                        <h3 class="text-2xl font-semibold mb-3">Privacy First</h3>
+                        <p class="text-brand-text/80">Your data is yours. Period. We build our apps to be private by default. That means no trackers, no ads, and no data mining. We believe privacy is a fundamental human right.</p>
                     </div>
                     <div class="text-center reveal reveal-delay-1">
-                        <h3 class="text-2xl font-bold mb-3">Thoughtful Design</h3>
-                        <p class="text-brand-text/80">We believe software should be beautiful, intuitive, and calm. We obsess over details to create distraction-free experiences that respect your time and attention, helping you find your flow.</p>
+                        <h3 class="text-2xl font-semibold mb-3">Thoughtful Design</h3>
+                        <p class="text-brand-text/80">We believe software should be beautiful, intuitive, and calm. We obsess over details to create distraction-free experiences that respect your time and attention.</p>
                     </div>
                     <div class="text-center reveal reveal-delay-2">
-                        <h3 class="text-2xl font-bold mb-3">Wellbeing Focused</h3>
-                        <p class="text-brand-text/80">Our goal is to create tools that genuinely improve your life. We build technology that fosters mental clarity, encourages healthy habits, and supports your overall peace of mind.</p>
+                        <h3 class="text-2xl font-semibold mb-3">Wellbeing Focused</h3>
+                        <p class="text-brand-text/80">Our goal is to create tools that genuinely improve your life. We build technology that fosters mental clarity, encourages healthy habits, and supports your peace of mind.</p>
                     </div>
                 </div>
              </div>
         </section>
         
-        <!-- Timeline Section -->
         <section class="py-20 md:py-32 px-6">
             <div class="container mx-auto max-w-2xl">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">The Journey So Far</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight reveal">The Journey So Far</h2>
                 </div>
                 <div class="relative reveal">
                     <div class="timeline-line"></div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <h4 class="text-xl font-bold">Start of June</h4>
+                        <h4 class="text-xl font-semibold">Start of June</h4>
                         <p class="text-brand-text/80 mt-1">The first lines of code for Drift are written, born from a desire for a simple, private journaling space.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <h4 class="text-xl font-bold">End of July</h4>
-                        <p class="text-brand-text/80 mt-1">After weeks of development and refinement, Drift is published on the Google Play Store for the public to download.</p>
+                        <h4 class="text-xl font-semibold">End of July</h4>
+                        <p class="text-brand-text/80 mt-1">After weeks of refinement, Drift is published on the Google Play Store for the public to download.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <h4 class="text-xl font-bold">8th August</h4>
+                        <h4 class="text-xl font-semibold">8th August</h4>
                         <p class="text-brand-text/80 mt-1">The Drift 2.0 update is pushed, introducing a refreshed design and new features based on early user feedback.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <h4 class="text-xl font-bold">End of September</h4>
-                        <p class="text-brand-text/80 mt-1">Our next app, Teehee, is scheduled to begin closed testing with a select group of users.</p>
+                        <h4 class="text-xl font-semibold">End of September</h4>
+                        <p class="text-brand-text/80 mt-1">Teehee closed testing begins with a select group of users.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="text-xl font-semibold">October 2025</h4>
+                        <p class="text-brand-text/80 mt-1">Teehee, our smart reminders app, enters open testing on the Google Play Store.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Founder Section -->
         <section class="pb-20 md:pb-32 px-6">
             <div class="container mx-auto max-w-4xl">
-                <div class="bg-brand-card rounded-lg p-8 md:p-12 grid md:grid-cols-3 gap-8 md:gap-12 items-center shadow-lg dark:shadow-2xl reveal">
+                <div class="bg-brand-card rounded-lg p-8 md:p-12 grid md:grid-cols-3 gap-8 md:gap-12 items-center reveal">
                     <div class="md:col-span-1">
-                        <img src="https://placehold.co/400x400/F9F6F2/403d39?text=Founder" alt="Founder of Afterlight Studio" class="rounded-full aspect-square object-cover w-full max-w-[200px] mx-auto md:max-w-full">
+                        <img src="https://placehold.co/400x400/f5f5f7/6e6e73?text=Founder" alt="Founder of Afterlight Studio" class="rounded-full aspect-square object-cover w-full max-w-[200px] mx-auto md:max-w-full">
                     </div>
                     <div class="md:col-span-2">
-                        <h3 class="text-3xl font-playfair font-bold">Meet the Founder</h3>
+                        <h3 class="text-3xl font-bold tracking-tight">Meet the Founder</h3>
                         <p class="mt-4 text-lg leading-relaxed text-brand-text/80">
                             I'm a second-year B.Tech Honours student in Computer Science, with a major in AI & Machine Learning. Afterlight Studio is my effort to merge a passion for clean code with a deep interest in philosophy and human-centered design.
                         </p>
                         <p class="mt-4 text-lg leading-relaxed text-brand-text/80">
                             My goal is to build technology that makes a positive, tangible difference in people's lives—tools that are quiet, respectful, and empowering.
                         </p>
-                        <p class="mt-6 text-sm text-brand-subtle">You can follow the journey on <a href="https://www.instagram.com/afterlight.apps/" target="_blank" class="font-semibold text-brand-accent hover:underline">Instagram</a> or <a href="https://www.threads.com/afterlight.apps/" target="_blank" class="font-semibold text-brand-accent hover:underline">Threads</a>.</p>
                     </div>
                 </div>
             </div>
@@ -196,13 +188,11 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="py-20 md:py-32 px-6 bg-brand-card text-center">
         <div class="container mx-auto max-w-2xl">
-            <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Let's Talk</h2>
-            <p class="mt-6 text-lg md:text-xl text-brand-subtle reveal reveal-delay-1">Have feedback, questions, or want to collaborate? We read every email.</p>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight reveal">Afterlight Studio</h2>
             <div class="mt-10 reveal reveal-delay-2">
-                <a href="mailto:papertrail.apps@gmail.com" class="inline-block bg-brand-accent text-white dark:text-gray-900 font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">Email us</a>
+                <a href="mailto:papertrail.apps@gmail.com" class="inline-block bg-brand-accent text-white font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">Email Us</a>
             </div>
             <div class="flex justify-center space-x-6 mt-12 text-brand-subtle">
                 <a href="https://www.instagram.com/afterlight.apps/" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Instagram</a>
@@ -212,7 +202,7 @@
         </div>
     </footer>
     <div class="py-8 px-6 text-center text-brand-subtle text-sm bg-brand-card border-t border-brand-border">
-        <p>&copy; 2025 Afterlight Studio. Built for humans</p>
+        <p>&copy; 2025 Afterlight Studio.</p>
     </div>
 
     <script>
@@ -265,9 +255,9 @@
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 20) {
-                    header.classList.add('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:shadow-md');
+                    header.classList.add('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:border-b', 'dark:border-brand-border');
                 } else {
-                    header.classList.remove('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:shadow-md');
+                    header.classList.remove('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:border-b', 'dark:border-brand-border');
                 }
             });
         });
