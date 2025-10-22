@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teehee — Afterlight Studio</title>
+    <meta name="description" content="Teehee, the smart reminders app that understands you. Now in open testing.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1d1d1f;
+            --heading-color: #000000;
+            --accent-color: #007aff;
+            --subtle-color: #6e6e73;
+            --card-bg-color: #f5f5f7;
+            --border-color: #d2d2d7;
+        }
+        html.dark {
+            --bg-color: #000000;
+            --text-color: #f5f5f7;
+            --heading-color: #ffffff;
+            --accent-color: #0a84ff;
+            --subtle-color: #86868b;
+            --card-bg-color: #1d1d1f;
+            --border-color: #3a3a3c;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.5s, color 0.5s; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; color: var(--heading-color); }
+        .nav-link.active { color: var(--accent-color); font-weight: 600; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-delay-3 { transition-delay: 0.45s; }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'], },
+                    colors: { 'brand-bg': 'var(--bg-color)', 'brand-text': 'var(--text-color)', 'brand-heading': 'var(--heading-color)', 'brand-accent': 'var(--accent-color)', 'brand-subtle': 'var(--subtle-color)', 'brand-card': 'var(--card-bg-color)', 'brand-border': 'var(--border-color)', }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-bg text-brand-text antialiased">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 p-6 transition-all duration-300">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-brand-heading">Afterlight Studio</a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Home</a>
+                <a href="about.html" class="nav-link hover:text-brand-accent transition-colors duration-300">About</a>
+                <a href="portfolio.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Portfolio</a>
+                <a href="drift.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Drift</a>
+                <a href="teehee.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Teehee</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <svg class="w-6 h-6 text-brand-heading" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-brand-card/80 dark:bg-brand-card backdrop-blur-lg rounded-lg p-4">
+            <a href="index.html" class="block py-2 text-brand-text">Home</a>
+            <a href="about.html" class="block py-2 text-brand-text">About</a>
+            <a href="portfolio.html" class="block py-2 text-brand-text">Portfolio</a>
+            <a href="drift.html" class="block py-2 text-brand-text">Drift</a>
+            <a href="teehee.html" class="block py-2 text-brand-text">Teehee</a>
+            <a href="#" target="_blank" class="mt-4 block bg-brand-accent text-white font-semibold py-3 px-6 rounded-full text-center hover:opacity-90 transition-opacity duration-300">Join Open Testing</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="teehee" class="py-20 md:py-32 px-6">
+             <div class="container mx-auto max-w-6xl pt-16">
+                <div class="text-center mb-16">
+                    <h3 class="text-md font-semibold uppercase tracking-widest text-brand-accent reveal">Teehee</h3>
+                    <h2 class="mt-4 text-4xl md:text-6xl font-bold tracking-tight reveal reveal-delay-1">The smart reminders app that understands you.</h2>
+                    <p class="mt-6 text-lg md:text-xl text-brand-subtle max-w-2xl mx-auto reveal reveal-delay-2">Finally, reminders that just get it. Now in open testing.</p>
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-3">
+                        <a href="#" target="_blank" class="inline-block bg-brand-accent text-white font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300 w-full sm:w-auto">Join Open Testing</a>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                    <div class="space-y-8 reveal">
+                        <h3 class="text-2xl font-bold tracking-tight">Reminders, reimagined.</h3>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-brand-accent mt-1 font-bold">01.</span>
+                            <p><strong class="font-semibold text-brand-heading">Natural Language.</strong> Just type: "Buy milk tomorrow evening" or "Finish the report by Friday at 5." Teehee understands and sets the reminder perfectly.</p>
+                        </div>
+                        <div class="flex items-start space-x-4 reveal-delay-1">
+                            <span class="text-brand-accent mt-1 font-bold">02.</span>
+                            <p><strong class="font-semibold text-brand-heading">Scan Anything.</strong> Take a photo of a poster, a timetable, or a handwritten note. Our AI finds the details and sets the reminder for you. No typing needed.</p>
+                        </div>
+                         <div class="flex items-start space-x-4 reveal-delay-2">
+                            <span class="text-brand-accent mt-1 font-bold">03.</span>
+                            <p><strong class="font-semibold text-brand-heading">Simple & Fast.</strong> A clean interface designed to get in, get out, and let you get on with your day. That's good UX.</p>
+                        </div>
+                    </div>
+                    <div class="reveal reveal-delay-1 bg-brand-card rounded-lg p-4">
+                        <img src="https://placehold.co/1200x900/f5f5f7/1d1d1f?text=Teehee+App+UI" alt="Teehee App Screenshot" class="rounded-lg">
+                    </div>
+                </div>
+
+                <div class="mt-20 md:mt-24 text-center max-w-3xl mx-auto">
+                    <h3 class="text-3xl font-bold tracking-tight mb-4 reveal">Now in Open Testing</h3>
+                    <p class="text-lg text-brand-text/80 reveal reveal-delay-1">
+                        Teehee is currently available on Android as a public beta. We're actively gathering feedback to make it perfect. An iOS version is planned for the future.
+                    </p>
+                    <div class="mt-8 reveal reveal-delay-2">
+                        <a href="#" target="_blank" class="inline-block bg-brand-accent text-white font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">Get Teehee on Android</a>
+                    </div>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <footer class="py-20 md:py-32 px-6 bg-brand-card text-center">
+        <div class="container mx-auto max-w-2xl">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight reveal">Ready to get organized?</h2>
+            <p class="mt-6 text-lg md:text-xl text-brand-subtle reveal reveal-delay-1">Download the Teehee beta today and never forget a thing.</p>
+            <div class="mt-10 reveal reveal-delay-2">
+                <a href="#" class="inline-block bg-brand-accent text-white font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">Join Open Testing</a>
+            </div>
+             <div class="flex justify-center space-x-6 mt-12 text-brand-subtle text-sm">
+                <a href="#" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Terms</a>
+                <span>&bull;</span>
+                <a href="#" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Privacy</a>
+            </div>
+        </div>
+    </footer>
+    <div class="py-8 px-6 text-center text-brand-subtle text-sm bg-brand-card border-t border-brand-border">
+        <p>&copy; 2025 Afterlight Studio.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Active Nav Link Logic ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const currentPage = 'teehee.html'; // Set current page for active link
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+            // --- Scroll Animation Logic ---
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); } });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+
+            // --- Theme Toggle Logic ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+            const applyTheme = (theme) => {
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    lightIcon.classList.remove('hidden');
+                    darkIcon.classList.add('hidden');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    darkIcon.classList.remove('hidden');
+                    lightIcon.classList.add('hidden');
+                }
+            };
+            const currentTheme = localStorage.getItem('color-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            applyTheme(currentTheme);
+            themeToggleBtn.addEventListener('click', () => {
+                const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+                localStorage.setItem('color-theme', newTheme);
+                applyTheme(newTheme);
+            });
+
+            // --- Header background on scroll ---
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:border-b', 'dark:border-brand-border');
+                } else {
+                    header.classList.remove('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:border-b', 'dark:border-brand-border');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
