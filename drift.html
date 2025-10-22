@@ -6,37 +6,34 @@
     <title>Drift — Afterlight Studio</title>
     <meta name="description" content="Discover Drift, a private and mindful journaling app from Afterlight Studio.">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles & Tailwind Config -->
     <style>
         :root {
-            --bg-color: #F9F6F2;
-            --text-color: #403d39;
-            --heading-color: #252422;
-            --accent-color: #8367c7;
-            --subtle-color: #a3a3a3;
-            --card-bg-color: #FFFFFF;
-            --border-color: rgba(0,0,0,0.08);
+            --bg-color: #ffffff;
+            --text-color: #1d1d1f;
+            --heading-color: #000000;
+            --accent-color: #007aff;
+            --subtle-color: #6e6e73;
+            --card-bg-color: #f5f5f7;
+            --border-color: #d2d2d7;
         }
         html.dark {
-            --bg-color: #1c1c1e;
-            --text-color: #d4d4d8;
+            --bg-color: #000000;
+            --text-color: #f5f5f7;
             --heading-color: #ffffff;
-            --accent-color: #a78bfa;
-            --subtle-color: #71717a;
-            --card-bg-color: #2a2a2c;
-            --border-color: rgba(255,255,255,0.1);
+            --accent-color: #0a84ff;
+            --subtle-color: #86868b;
+            --card-bg-color: #1d1d1f;
+            --border-color: #3a3a3c;
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.5s, color 0.5s; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: var(--heading-color); }
-        .nav-link.active { color: var(--accent-color); font-weight: 500; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.5s, color 0.5s; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; color: var(--heading-color); }
+        .nav-link.active { color: var(--accent-color); font-weight: 600; }
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
         .reveal.is-visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.15s; }
@@ -49,7 +46,7 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { 'inter': ['Inter', 'sans-serif'], 'playfair': ['Playfair Display', 'serif'], },
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'], },
                     colors: { 'brand-bg': 'var(--bg-color)', 'brand-text': 'var(--text-color)', 'brand-heading': 'var(--heading-color)', 'brand-accent': 'var(--accent-color)', 'brand-subtle': 'var(--subtle-color)', 'brand-card': 'var(--card-bg-color)', 'brand-border': 'var(--border-color)', }
                 }
             }
@@ -58,15 +55,15 @@
 </head>
 <body class="bg-brand-bg text-brand-text antialiased">
 
-    <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 p-6 transition-all duration-300">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xl font-playfair font-bold text-brand-heading">Afterlight Studio</a>
+            <a href="index.html" class="text-xl font-bold text-brand-heading">Afterlight Studio</a>
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="index.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Home</a>
                 <a href="about.html" class="nav-link hover:text-brand-accent transition-colors duration-300">About</a>
                 <a href="portfolio.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Portfolio</a>
                 <a href="drift.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Drift</a>
+                <a href="teehee.html" class="nav-link hover:text-brand-accent transition-colors duration-300">Teehee</a>
             </div>
             <div class="flex items-center space-x-4">
                  <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
@@ -78,23 +75,22 @@
                 </button>
             </div>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-brand-card/80 backdrop-blur-lg rounded-lg p-4">
+        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-brand-card/80 dark:bg-brand-card backdrop-blur-lg rounded-lg p-4">
             <a href="index.html" class="block py-2 text-brand-text">Home</a>
             <a href="about.html" class="block py-2 text-brand-text">About</a>
             <a href="portfolio.html" class="block py-2 text-brand-text">Portfolio</a>
             <a href="drift.html" class="block py-2 text-brand-text">Drift</a>
+            <a href="teehee.html" class="block py-2 text-brand-text">Teehee</a>
             <a href="https://play.google.com/store/apps/details?id=com.papertrail.drift" target="_blank" class="mt-4 block bg-brand-accent text-white font-semibold py-3 px-6 rounded-full text-center hover:opacity-90 transition-opacity duration-300">Download Drift</a>
         </div>
     </header>
 
     <main id="main-content">
-        <!-- Drift Landing Page Content -->
         <section id="drift" class="py-20 md:py-32 px-6">
              <div class="container mx-auto max-w-6xl pt-16">
                 <div class="text-center mb-16">
-                    <h3 class="text-sm font-bold uppercase tracking-widest text-brand-accent reveal">Our First App</h3>
-                    <h2 class="mt-4 text-4xl md:text-6xl font-playfair font-bold reveal reveal-delay-1">Drift</h2>
+                    <h3 class="text-md font-semibold uppercase tracking-widest text-brand-accent reveal">Drift</h3>
+                    <h2 class="mt-4 text-4xl md:text-6xl font-bold tracking-tight reveal reveal-delay-1">A private sanctuary for your thoughts.</h2>
                     <p class="mt-6 text-lg md:text-xl text-brand-subtle max-w-2xl mx-auto reveal reveal-delay-2">An offline-first journaling experience for emotional clarity.</p>
                     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-3">
                         <a href="https://play.google.com/store/apps/details?id=com.papertrail.drift" target="_blank" class="inline-block bg-brand-accent text-white font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300 w-full sm:w-auto">Download Drift</a>
@@ -103,99 +99,82 @@
 
                 <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                     <div class="space-y-8 reveal">
-                        <h3 class="text-2xl font-bold">A Private Sanctuary for Your Thoughts</h3>
+                        <h3 class="text-2xl font-bold tracking-tight">Focus on what matters.</h3>
                         <div class="flex items-start space-x-4">
-                            <span class="text-brand-accent mt-1">✦</span>
-                            <p><strong class="font-semibold text-brand-heading">Actionable Reminders (New!).</strong> Write a simple diary entry in your own words and let us set the perfect, timely reminders for you to reflect and act.</p>
+                            <span class="text-brand-accent mt-1 font-bold">01.</span>
+                            <p><strong class="font-semibold text-brand-heading">Offline First & Private.</strong> Your entries are encrypted and stored only on your device. No accounts, no cloud, no one sees them but you.</p>
                         </div>
                         <div class="flex items-start space-x-4 reveal-delay-1">
-                            <span class="text-brand-accent mt-1">✦</span>
-                            <p><strong class="font-semibold text-brand-heading">Completely Private.</strong> Your entries are encrypted and stored only on your device. We can't see them, and we never will. No accounts, no cloud.</p>
+                            <span class="text-brand-accent mt-1 font-bold">02.</span>
+                            <p><strong class="font-semibold text-brand-heading">Smart Reminders.</strong> Write a simple diary entry in your own words. Drift can find actionable items and set timely reminders for you to reflect and act.</p>
                         </div>
                          <div class="flex items-start space-x-4 reveal-delay-2">
-                            <span class="text-brand-accent mt-1">✦</span>
-                            <p><strong class="font-semibold text-brand-heading">Minimalist Design.</strong> A clean, beautiful, and distraction-free interface to help you focus on what matters: your thoughts.</p>
+                            <span class="text-brand-accent mt-1 font-bold">03.</span>
+                            <p><strong class="font-semibold text-brand-heading">Distraction-Free Design.</strong> A clean, beautiful, and minimalist interface to help you focus on what matters: your thoughts.</p>
                         </div>
                     </div>
-                    <div class="reveal reveal-delay-1">
-                        <!-- UPDATED: Image path -->
-                        <img src="IMG-20251002-WA0019.jpg" alt="Drift App Screenshot" class="rounded-2xl shadow-2xl">
+                    <div class="reveal reveal-delay-1 bg-brand-card rounded-lg p-4">
+                        <img src="https://placehold.co/1200x900/f5f5f7/1d1d1f?text=Drift+App+UI" alt="Drift App Screenshot" class="rounded-lg">
                     </div>
                 </div>
 
-                <!-- Availability Section -->
                 <div class="mt-20 md:mt-24 text-center max-w-3xl mx-auto">
-                    <h3 class="text-3xl font-playfair font-bold mb-4 reveal">A Note on Availability</h3>
+                    <h3 class="text-3xl font-bold tracking-tight mb-4 reveal">A Note on Availability</h3>
                     <p class="text-lg text-brand-text/80 reveal reveal-delay-1">
-                        Currently, Drift is exclusively available on Android. As a solo student developer, this allows me to focus on creating the best possible experience on one platform first. An iOS version is planned for the future, and your support helps make that a reality sooner.
+                        Currently, Drift is exclusively available on Android. As a solo student developer, this allows me to focus on creating the best possible experience on one platform first. An iOS version is planned for the future.
                     </p>
                     <div class="mt-8 reveal reveal-delay-2">
                         <a href="https://play.google.com/store/apps/details?id=com.papertrail.drift" target="_blank" class="inline-block bg-brand-accent text-white font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">Get Drift on Android</a>
                     </div>
                 </div>
                 
-                <!-- Screenshot Gallery -->
                 <div class="mt-20 md:mt-24">
-                    <h3 class="text-3xl font-playfair font-bold text-center mb-12 reveal">Glimpses of Drift</h3>
+                    <h3 class="text-3xl font-bold tracking-tight text-center mb-12 reveal">Glimpses of Drift</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                        <!-- UPDATED: Image paths -->
-                        <div class="reveal"><img src="IMG-20251002-WA0016.jpg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" alt="Drift Screenshot 1"></div>
-                        <div class="reveal reveal-delay-1"><img src="IMG-20251002-WA0017.jpg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" alt="Drift Screenshot 2"></div>
-                        <div class="reveal reveal-delay-2"><img src="IMG-20251002-WA0015.jpg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" alt="Drift Screenshot 3"></div>
-                        <div class="reveal reveal-delay-3"><img src="IMG-20251002-WA0014.jpg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" alt="Drift Screenshot 4"></div>
+                        <div class="reveal"><img src="https://placehold.co/600x800/f5f5f7/1d1d1f?text=Screen+1" class="rounded-lg" alt="Drift Screenshot 1"></div>
+                        <div class="reveal reveal-delay-1"><img src="https://placehold.co/600x800/f5f5f7/1d1d1f?text=Screen+2" class="rounded-lg" alt="Drift Screenshot 2"></div>
+                        <div class="reveal reveal-delay-2"><img src="https://placehold.co/600x800/f5f5f7/1d1d1f?text=Screen+3" class="rounded-lg" alt="Drift Screenshot 3"></div>
+                        <div class="reveal reveal-delay-3"><img src="https://placehold.co/600x800/f5f5f7/1d1d1f?text=Screen+4" class="rounded-lg" alt="Drift Screenshot 4"></div>
                     </div>
                 </div>
 
-                <!-- Testimonials Section -->
                 <div class="mt-20 md:mt-24">
-                    <h3 class="text-3xl font-playfair font-bold text-center mb-12 reveal">What Users Are Saying</h3>
+                    <h3 class="text-3xl font-bold tracking-tight text-center mb-12 reveal">What Users Are Saying</h3>
                     <div class="max-w-2xl mx-auto text-center reveal">
-                        <div class="flex justify-center mb-4 text-yellow-400">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg class="w-6 h-6 text-gray-300 dark:text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        </div>
-                        <p class="text-2xl md:text-3xl font-playfair italic text-brand-heading">"This app nails the balance between utility and clean design, genuinely impressive."</p>
+                        <p class="text-2xl md:text-3xl font-semibold text-brand-heading">"This app nails the balance between utility and clean design, genuinely impressive."</p>
                         <p class="mt-4 text-brand-subtle">— A Drift User</p>
                     </div>
                 </div>
 
-                <!-- Pricing Section -->
                 <div class="mt-20 md:mt-24 bg-brand-card py-16 px-6 rounded-lg">
                     <div class="container mx-auto max-w-4xl text-center">
-                        <h3 class="text-3xl font-playfair font-bold mb-4 reveal">Unlock Your Potential</h3>
+                        <h3 class="text-3xl font-bold tracking-tight mb-4 reveal">Unlock Your Potential</h3>
                         <p class="text-lg text-brand-subtle mb-12 reveal reveal-delay-1">Simple, one-time purchases. No subscriptions.</p>
                         <div class="flex flex-col md:flex-row justify-center gap-8">
-                            <!-- Pro Lite Card -->
                             <div class="flex-1 border border-brand-border p-8 rounded-lg reveal reveal-delay-2">
                                 <h4 class="text-2xl font-bold">Pro Lite</h4>
-                                <p class="text-4xl font-playfair font-bold my-4">$0.6 <span class="text-lg text-brand-subtle">USD</span></p>
+                                <p class="text-4xl font-bold my-4">$0.6 <span class="text-lg text-brand-subtle">USD</span></p>
                                 <p class="text-brand-text/80 mb-6">Get started with essential pro features. Pay the remainder later for the full Pro experience.</p>
-                                <ul class="text-left space-y-2 mb-8">
+                                <ul class="text-left space-y-2 mb-8 text-brand-text/90">
                                     <li>✓ Everything in free</li>
                                     <li>✓ Early access to exclusive themes</li>
-                                    <li>✓ Achievements</li>
-                                    <li>✓ Ambiance mode</li>
+                                    <li>✓ Achievements & Ambiance mode</li>
                                     <li>✓ "Burn it" mode</li>
                                     <li>✓ Export and import VIA QR code</li>
                                 </ul>
-                                <a href="https://play.google.com/store/apps/details?id=com.papertrail.drift" target="_blank" class="w-full block bg-brand-bg text-brand-heading font-semibold py-3 px-8 rounded-full hover:bg-brand-border transition-colors duration-300">Choose Lite</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.papertrail.drift" target="_blank" class="w-full block bg-white dark:bg-brand-bg text-brand-heading font-semibold py-3 px-8 rounded-full hover:bg-brand-border/40 transition-colors duration-300">Choose Lite</a>
                             </div>
-                            <!-- Pro Card -->
                             <div class="flex-1 bg-brand-accent text-white p-8 rounded-lg shadow-lg reveal reveal-delay-3">
                                 <h4 class="text-2xl font-bold text-white">Pro</h4>
-                                <p class="text-4xl font-playfair font-bold my-4">$1.7 <span class="text-lg opacity-80">USD</span></p>
+                                <p class="text-4xl font-bold my-4">$1.7 <span class="text-lg opacity-80">USD</span></p>
                                 <p class="opacity-90 mb-6">The complete Drift experience. Unlock everything with a single purchase.</p>
                                 <ul class="text-left space-y-2 mb-8">
                                     <li>✓ Everything in free and Lite</li>
-                                    <li>✓ Sharing diaries</li>
-                                    <li>✓ Beautiful PDF exports</li>
+                                    <li>✓ Sharing diaries & PDF exports</li>
                                     <li>✓ Time capsule</li>
-                                    <li>✓ Export backup using Google Cloud</li>
+                                    <li>✓ Google Cloud backup</li>
                                     <li>✓ Mood chart and tracker</li>
-                                    <li>✓ PIN/Biometrics unlock with vault mode</li>
+                                    <li>✓ PIN/Biometrics unlock</li>
                                     <li>✓ Access 200+ curated prompts</li>
                                 </ul>
                                 <a href="https://play.google.com/store/apps/details?id=com.papertrail.drift" target="_blank" class="w-full block bg-white text-brand-accent font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">Go Pro</a>
@@ -207,30 +186,24 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="py-20 md:py-32 px-6 bg-brand-card text-center">
         <div class="container mx-auto max-w-2xl">
-            <h2 class="text-4xl md:text-5xl font-playfair font-bold reveal">Ready to Start Journaling?</h2>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight reveal">Ready to Start Journaling?</h2>
             <p class="mt-6 text-lg md:text-xl text-brand-subtle reveal reveal-delay-1">Download Drift today and find clarity, one entry at a time.</p>
             <div class="mt-10 reveal reveal-delay-2">
                 <a href="https://play.google.com/store/apps/details?id=com.papertrail.drift" class="inline-block bg-brand-accent text-white font-semibold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">Download Now</a>
             </div>
-            <div class="flex justify-center space-x-6 mt-12 text-brand-subtle">
-                <a href="https://www.instagram.com/afterlight.apps/" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Instagram</a>
+             <div class="flex justify-center space-x-6 mt-12 text-brand-subtle text-sm">
+                <a href="https://www.notion.so/Terms-and-conditions-24435ab8333d8080bd11eb8c64c213b1?source=copy_link" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Terms</a>
                 <span>&bull;</span>
-                <a href="https://www.threads.com/afterlight.apps/" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Threads</a>
-            </div>
-             <div class="flex justify-center space-x-6 mt-6 text-brand-subtle text-sm">
-                <a href="https://www.notion.so/Terms-and-conditions-24435ab8333d8080bd11eb8c64c213b1?source=copy_link" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Terms & Conditions</a>
-                <span>&bull;</span>
-                <a href="https://solar-front-f4e.notion.site/Privacy-Policy-for-Drift-22635ab8333d803986afe8c7d7bcaf8b?pvs=74" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Privacy Policy</a>
+                <a href="https://solar-front-f4e.notion.site/Privacy-Policy-for-Drift-22635ab8333d803986afe8c7d7bcaf8b?pvs=74" target="_blank" class="hover:text-brand-accent transition-colors duration-300">Privacy</a>
                 <span>&bull;</span>
                 <a href="https://www.notion.so/FAQ-24435ab8333d80f7981ed992cfd80486?source=copy_linka" target="_blank" class="hover:text-brand-accent transition-colors duration-300">FAQ</a>
             </div>
         </div>
     </footer>
     <div class="py-8 px-6 text-center text-brand-subtle text-sm bg-brand-card border-t border-brand-border">
-        <p>&copy; 2024 Afterlight Studio. Built for humans.</p>
+        <p>&copy; 2025 Afterlight Studio.</p>
     </div>
 
     <script>
@@ -283,9 +256,9 @@
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 20) {
-                    header.classList.add('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:shadow-md');
+                    header.classList.add('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:border-b', 'dark:border-brand-border');
                 } else {
-                    header.classList.remove('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:shadow-md');
+                    header.classList.remove('bg-brand-bg/80', 'backdrop-blur-lg', 'shadow-sm', 'dark:border-b', 'dark:border-brand-border');
                 }
             });
         });
